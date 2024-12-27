@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/codewithfourtix/backend/issues"
   },
-  "homepage": "https://github.com/codewithfourtix/backend#readme"
+  "homepage": "https://github.com/codewithfourtix/backend#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
