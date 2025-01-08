@@ -1,6 +1,8 @@
-const server = require("http");
+const http = require("http");
 
-server.createServer((req, res) => {
+const server = http.createServer((req, res) => {
+  console.log("Request received");
+  console.log(req.url);
   res.end("hello world from node js");
 });
 
