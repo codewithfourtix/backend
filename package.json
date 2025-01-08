@@ -19,6 +19,7 @@
   "homepage": "https://github.com/codewithfourtix/backend#readme",
   "dependencies": {
     "cat-me": "^1.0.3",
+    "ejs": "^3.1.10",
     "express": "^4.21.2"
   }
 }
