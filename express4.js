@@ -11,9 +11,16 @@ app.use((req, res, next) => {
   return next();
 });
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.get(
+  "/",
+  (req, res, next) => {
+    console.log("Middleware executed for / route");
+    next();
+  },
+  (req, res) => {
+    res.render("index");
+  }
+);
 
 app.get("/about", (req, res) => {
   res.send("This is the about page");
