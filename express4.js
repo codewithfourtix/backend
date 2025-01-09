@@ -22,6 +22,11 @@ app.get(
   }
 );
 
+app.get("/data-form", (req, res) => {
+  console.log(req.query);
+  res.send("Data received");
+});
+
 app.get("/about", (req, res) => {
   res.send("This is the about page");
 });
