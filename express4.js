@@ -5,6 +5,9 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.use(morgan("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.use((req, res, next) => {
   console.log("Middleware executed");
@@ -22,8 +25,13 @@ app.get(
   }
 );
 
-app.get("/data-form", (req, res) => {
-  console.log(req.query);
+// app.get("/data-form", (req, res) => {
+//   console.log(req.query);
+//   res.send("Data received");
+// });
+
+app.post("/data-form", (req, res) => {
+  console.log(req.body);
   res.send("Data received");
 });
 
