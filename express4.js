@@ -1,19 +1,22 @@
 const express = require("express");
-const morgan = require("morgan");
-const app = express();
+const morgan = require("morgan"); // every detail of the request will be logged
+const app = express(); // create an express app
+const userModel = require("./models/user"); // import the user model
+const db = require("./config/db"); // import the database connection
 
-app.set("view engine", "ejs");
+app.set("view engine", "ejs"); // set the view engine to ejs
 
-app.use(morgan("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(morgan("dev")); // use morgan middleware
+app.use(express.json()); // use express.json middleware
+app.use(express.urlencoded({ extended: true })); // use express.urlencoded middleware
+app.use(express.static("public")); // use express.static middleware to serve static files from the public folder
 
+//example of a middleware
 app.use((req, res, next) => {
   console.log("Middleware executed");
   return next();
 });
-
+//example of middle ware for a specific route
 app.get(
   "/",
   (req, res, next) => {
